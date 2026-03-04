@@ -1,17 +1,18 @@
 # Robot Motion Simulator
 
-This project implements a **Robot Motion Simulator** developed in Java for the course **COEN 448 – Software Testing and Validation (Winter 2026)**.
+This project implements a **Robot Motion Simulator** developed in Java for the course **COEN 448 – Software Testing and Validation (Winter 2026)** at Concordia University.
 
-The simulator allows a robot to move on an **N × N grid floor** while supporting commands for movement, direction changes, drawing paths, displaying robot status, and replaying previously executed commands.
+The simulator models a robot moving on an **N × N grid floor**. The robot can move across the grid, change direction, draw paths using a pen, display its status, print the grid, and replay previously executed commands.
 
 ---
 
 ## Technologies Used
 
-- Java
-- Maven
-- JUnit 5
-- Git / GitHub
+- Java  
+- Maven  
+- JUnit 5  
+- JaCoCo (Code Coverage)  
+- Git / GitHub  
 
 ---
 
@@ -34,15 +35,15 @@ The simulator allows a robot to move on an **N × N grid floor** while supportin
 
 ## Running the Tests
 
-The project uses **Maven** to build and run the automated tests.
+The project uses **Maven** to build and execute automated tests.
 
-To execute the tests, run the following command in the project directory:
+To run the test suite, execute the following command in the project directory:
 
 ```bash
 mvn test
 ```
 
-This command will run all **JUnit unit tests** included in the project.
+This will execute all **JUnit unit tests** included in the project.
 
 ---
 
@@ -54,6 +55,24 @@ A total of **42 test cases** are executed to ensure the system behaves as expect
 
 ---
 
+## Code Coverage
+
+Code coverage is measured using the **JaCoCo Maven Plugin**. Coverage reports are automatically generated when running the test suite.
+
+To generate the coverage report, run:
+
+```bash
+mvn clean test
+```
+
+After execution, the HTML coverage report can be found at:
+
+target/site/jacoco/index.html
+
+The project enforces minimum coverage thresholds to ensure sufficient testing of the system behavior.
+
+---
+
 ## Repository Note
 
 During development, issues were encountered with the original GitHub repository related to commit synchronization and repository history tracking. The commit history became difficult to interpret due to inconsistencies between local and remote commits.
@@ -61,6 +80,13 @@ During development, issues were encountered with the original GitHub repository 
 To resolve this and maintain a clearer project structure, the repository was recreated with a clean setup. As a result, this repository mainly reflects the finalized version of the project code and documentation rather than the complete development history from earlier stages.
 
 This repository contains the full implementation, test cases, and documentation used for the project submission.
+
+---
+
+## Course
+
+COEN 448 – Software Testing and Validation  
+Concordia University
 
 ---
 
