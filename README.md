@@ -1,103 +1,69 @@
-# Robot Motion Simulator - COEN 448 Project D1
+# Robot Motion Simulator
 
-## Team AMMR
+This project implements a **Robot Motion Simulator** developed in Java for the course **COEN 448 – Software Testing and Validation (Winter 2026)**.
 
-- Anas
-- Mikelange
-- Rahil
-- Jazib
+The simulator allows a robot to move on an **N × N grid floor** while supporting commands for movement, direction changes, drawing paths, displaying robot status, and replaying previously executed commands.
 
-## Project Overview
+---
 
-A Java application that simulates a robot moving on an N×N grid floor. The robot can draw patterns by moving with its pen down, and supports various commands for control and visualization.
+## Technologies Used
 
-## Features
+- Java
+- Maven
+- JUnit 5
+- Git / GitHub
 
-- 10 robot commands (U, D, R, L, M, P, C, Q, I, H)
-- N×N configurable grid floor
-- Pen up/down drawing capability
-- Command history with replay
-- Boundary checking and input validation
+---
 
-## Requirements
-
-- Java JDK 8 or higher
-- Maven 3.x
-- Git
-
-## Quick Start
-```bash
-# Clone the repository
-git clone https://github.com/anaself02/robot-motion-simulator-AMMR.git
-cd robot-motion-simulator-AMMR
-
-# Compile
-mvn clean compile
-
-# Run tests
-mvn test
-
-# Run the application
-java -cp target/classes com.concordia.robot.Main
-```
-
-## Commands
+## Supported Commands
 
 | Command | Description |
-|---------|-------------|
-| `U` | Pen up |
-| `D` | Pen down |
-| `R` | Turn right |
-| `L` | Turn left |
-| `M s` | Move forward s spaces |
-| `P` | Print the floor |
-| `C` | Show current position and status |
-| `Q` | Quit |
-| `I n` | Initialize n×n floor |
-| `H` | Replay command history |
+|--------|-------------|
+| U / u | Lift the pen up so the robot moves without drawing |
+| D / d | Put the pen down so the robot draws while moving |
+| R / r | Turn the robot right |
+| L / l | Turn the robot left |
+| M s | Move the robot forward by *s* spaces |
+| P / p | Print the current floor grid |
+| C / c | Display the robot's current position and status |
+| I n | Initialize a new *n × n* floor grid |
+| H / h | Replay the command history |
+| Q / q | Quit the program |
 
-## Example
-```
->Enter command: I 10
-System initialized with 10x10 floor
+---
 
->Enter command: D
->Enter command: M 4
->Enter command: R
->Enter command: M 3
->Enter command: P
-   0  1  2  3  4  5  6  7  8  9
-4  *  *  *  *
-3  *
-2  *
-1  *
-0  *
+## Running the Tests
+
+The project uses **Maven** to build and run the automated tests.
+
+To execute the tests, run the following command in the project directory:
+
+```bash
+mvn test
 ```
+
+This command will run all **JUnit unit tests** included in the project.
+
+---
 
 ## Testing
 
-- **42 unit tests** covering all functionality
-- **100% test pass rate**
-- JUnit 5 testing framework
+The system was validated using automated unit testing to verify the correctness of robot movements, command execution, floor initialization, and other core behaviors of the simulator.
 
-Run tests with: `mvn test`
+A total of **42 test cases** are executed to ensure the system behaves as expected.
 
-## Project Structure
-```
-src/
-├── main/java/com/concordia/robot/
-│   ├── Direction.java          # Direction enum
-│   ├── Floor.java              # Grid management
-│   ├── Robot.java              # Robot state and movement
-│   ├── RobotController.java    # Command processing
-│   └── Main.java               # User interface
-└── test/java/com/concordia/robot/
-    ├── DirectionTest.java
-    ├── FloorTest.java
-    ├── RobotTest.java
-    └── RobotControllerTest.java
-```
+---
 
-## License
+## Repository Note
 
-Educational project for COEN 448 - Concordia University
+During development, issues were encountered with the original GitHub repository related to commit synchronization and repository history tracking. The commit history became difficult to interpret due to inconsistencies between local and remote commits.
+
+To resolve this and maintain a clearer project structure, the repository was recreated with a clean setup. As a result, this repository mainly reflects the finalized version of the project code and documentation rather than the complete development history from earlier stages.
+
+This repository contains the full implementation, test cases, and documentation used for the project submission.
+
+---
+
+## Author
+
+Faisal AlMasri
