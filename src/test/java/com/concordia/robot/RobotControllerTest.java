@@ -64,6 +64,7 @@ public class RobotControllerTest {
     @Test
     public void testInvalidCommands() {
         assertFalse(controller.processCommand("X"));
+        assertEquals(0, controller.getCommandHistory().size());
         assertFalse(controller.processCommand(""));
         assertFalse(controller.processCommand(null));
         assertFalse(controller.processCommand("M"));
@@ -95,6 +96,13 @@ public class RobotControllerTest {
     @Test
     public void testNegativeMoveCommand() {
         assertFalse(controller.processCommand("M -5"));
+        assertEquals(0, controller.getCommandHistory().size());
+    }
+    
+    @Test
+    public void testFailedMoveNotRecordedInHistory() {
+        assertFalse(controller.processCommand("M 100"));
+        assertEquals(0, controller.getCommandHistory().size());
     }
     
     @Test
