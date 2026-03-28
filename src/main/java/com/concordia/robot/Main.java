@@ -45,7 +45,7 @@ public class Main {
             boolean success = controller.processCommand(command);
             
             if (!success) {
-                System.out.println("Error: Invalid command. Type 'H' to see available commands.");
+                System.out.println("Error: Invalid command. Refer to the available commands listed above.");
             }
             
             System.out.println();
