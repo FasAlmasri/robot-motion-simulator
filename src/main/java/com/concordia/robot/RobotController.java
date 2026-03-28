@@ -41,32 +41,33 @@ public class RobotController {
         command = command.trim();
         String upperCommand = command.toUpperCase();
         
-        // Store command in history (except Q and H)
-        if (!upperCommand.equals("Q") && !upperCommand.equals("H")) {
-            commandHistory.add(command);
-        }
-        
         // Single character commands
         if (command.length() == 1) {
             char cmd = upperCommand.charAt(0);
             switch (cmd) {
                 case 'U':
                     robot.penUp();
+                    commandHistory.add(command);
                     return true;
                 case 'D':
                     robot.penDown();
+                    commandHistory.add(command);
                     return true;
                 case 'R':
                     robot.turnRight();
+                    commandHistory.add(command);
                     return true;
                 case 'L':
                     robot.turnLeft();
+                    commandHistory.add(command);
                     return true;
                 case 'P':
                     floor.print();
+                    commandHistory.add(command);
                     return true;
                 case 'C':
                     robot.printStatus();
+                    commandHistory.add(command);
                     return true;
                 case 'Q':
                     return true;
@@ -94,8 +95,10 @@ public class RobotController {
                         boolean moved = robot.move(value);
                         if (!moved) {
                             System.out.println("Error: Cannot move outside floor boundaries");
+                            return false;
                         }
-                        return moved;
+                        commandHistory.add(command);
+                        return true;
                         
                     case 'I':
                         if (value <= 0) {
@@ -103,6 +106,7 @@ public class RobotController {
                             return false;
                         }
                         initialize(value);
+                        commandHistory.add(command);
                         return true;
                         
                     default:
